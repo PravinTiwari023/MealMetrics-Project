@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "proven-yen-409211",
+  "private_key_id": "2ee88f35110acd12de76ae51ed9ccd3ee2f3b073",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDU719T9geqLg5g\nkOBnR0qxH/4r3yoz3YpC3RIdvAjMCNrFukjqhvUAjgsMLG07T05t68QtfXbMtFHe\ncLadVHoNgC8dHIm+BSwFnzSm5f7qcM7eqcYbOnIg7OLXpOpy9QC+MwQqfKoJ6Z63\nkBps1Y95oV939s/XdHU5E9a9RH3ZfEZU+SkE5bnuTHZi3/skh2dncbsJOcQJwhQa\neZEEy0l2Rtu8snLt4z/nrOOuqlzDCb2Ft/A9xn+9c9X7cjJkviSNSKyvTXH697kQ\noNixFNONJ5teQ+eLwRN645M+4TmSMdNj80dmcwcvcbVwxo4CpU6v4ajvTvvY7w3G\n1pFN2w4fAgMBAAECggEAIyTIzoI2PKOyUsTGjLUrAjXeDN6dyAah+awj/81XhFlX\nxjebLj4M9MT81MsGUjoiHylA7SMeduWx920R7sCRDmZgIEVkBH01CU5/8aXXH1l0\nAzLxE/BfAskmHWJGIagHMd0YrGx74fvxaql5ewn6TqBQMewF3LEHYd7A2+cQgFLh\n0vqX+b4UyqEZuzq8czSxTckYGBOzp5RQslg9YYlylJi10fTLCTVV1RoUpZ/iLwbA\n7XNzzlbbYTsmk7r5LV90spN/v0P2sEjHd4xXPQ1caFJTOGTLEXCWJN+HpVcvcXlR\nytnnYyLTM0iPjKO/yMfyNzZHyEWfaHxNfEADDV9QJQKBgQD3nVRX9UdsHRKJh9Od\np6N1NFu9MarbHXMRRimFEmHJ8bXPjl5f4OWp8Msmv5jtP+Qlh9F1akICbJPYDpE1\nHsDAHEFNzupY/4mSGadHvx2z40Xt8pBOPc+NRvjht9bUdC9IYrli1P16GcZzbOYf\nMtWFdv/aXGJxVphPRLXhzhWAUwKBgQDcJWRlCMz/zdgoa0dybFTjK9KHs5CSrAEv\nhY94aKKzJcVtA0ZDvB8iMjHYxhxWyy41tR0WKUjsybiB081JzljjsHcJzBlZwR09\nHySreqGXEumg9F6V/1DzJT0giAbcn2r4QAkAe64VvQ0vsRSfINsQTc3kDQz/MASk\nY9JKnnKxhQKBgQCLEsGRmYDg9z83IaO4k7RaGus/ywqkgNjlJdwiEp3795dfGR5m\niYFUvprLi6dP8aepcKwzX1ft1p//JMdn53rpK7V+By5WiEfzWBc9U9lR9N+M8sUc\nPNk7B1a4KDIwJ4V7CYAIQ4qOrrVolQx3D20fxiOTuHnOII3xT608QyyOYwKBgFqL\nepZfn0lbFZvSO+mhCu0Ami+8OCtLWZV9HnxMtRZv45qprR2w4zFCaeQZ35AHM3Nd\nkaAKzPavJRco0ReZKlBDxUIfUxHqbqc0BvYMkye63KKZv8l74ISQ/WpC6GeXnfyL\nAejT9c71GdZSxAOLFO7IwXUZtQ3EZzRh5h1QvCWtAoGBAMGNGz1CXgXYy5uL+H2u\n1WptkA6M6jrgvxV0YLH73JazjpLPFIHgGkZvG56mC3/8J1WLHPLXrfS3Yl20foJL\nMHwKAwSb3GiYdEw+BWT56bu+c3AkGUc8WToAowliLdH1wbpcRX7SMLGwQCBEhlop\nl2knEAlg67z6h+GOozMLxeP7\n-----END PRIVATE KEY-----\n",
+  "client_email": "mealmertics-data@proven-yen-409211.iam.gserviceaccount.com",
+  "client_id": "106962618533067781934",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/mealmertics-data%40proven-yen-409211.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
