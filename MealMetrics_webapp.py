@@ -41,8 +41,8 @@ selected_page = option_menu(None, ["Home", "Dashboard", "About Us", 'Contact Us'
                             on_change=on_change, key='menu', orientation="horizontal",
                             styles={
                                 "container": {"padding": "5px", "background-color": "#f0f0f0", "border-radius": "8px"},
-                                "icon": {"color": "#606060", "font-size": "20px"},
-                                "nav-link": {"font-size": "14px", "text-align": "left", "margin": "0px", "color": "#505050"},  # Reduced font size
+                                "icon": {"color": "#606060", "font-size": "12px"},
+                                "nav-link": {"font-size": "13px", "text-align": "top", "margin": "0px", "color": "#505050"},  # Reduced font size
                                 "nav-link-selected": {"background-color": "#E6E6FA", "color": "black"},
                             })
 
