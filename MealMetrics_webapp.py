@@ -36,20 +36,20 @@ data = pd.DataFrame(data_)
 def on_change(key):
     selection = st.session_state[key]
 
-selected_page = option_menu(None, ["Home", "Dashboard", "About Us", 'Contact Us'],
+selected_page = option_menu(None, ["HOME", "STATS", "ABOUT", 'CONTACT'],
                             icons=['house', 'list-task', "info-circle", 'envelope'],
                             on_change=on_change, key='menu', orientation="horizontal",
                             styles={
-                                "container": {"padding": "5px", "background-color": "#f0f0f0", "border-radius": "7px"},
+                                "container": {"padding": "4px", "background-color": "#f0f0f0", "border-radius": "10px"},
                                 "icon": {"color": "#606060", "font-size": "12px"},
-                                "nav-link": {"font-size": "10px", "text-align": "center", "margin": "0px", "color": "#505050", "font-weight": "normal"},  # Set font weight to normal
+                                "nav-link": {"font-size": "12px", "text-align": "center", "margin": "0px", "color": "#505050", "font-weight": "normal"},  # Set font weight to normal
                                 "nav-link-selected": {"background-color": "#B0A4E6", "color": "black", "font-weight": "normal"},  # Darker shade of light violet and normal font weight
                             })
 
 
 
 # Page layouts
-if selected_page == 'Home':
+if selected_page == 'HOME':
     st.title('Welcome to MealMetrics!')
 
     # Banner Image
@@ -102,7 +102,7 @@ if selected_page == 'Home':
     st.markdown("---")
     st.markdown("© 2023 MealMetrics - Unveiling Dietary Patterns")
 
-if selected_page == 'Dashboard':
+if selected_page == 'STATS':
     st.title('📊 Dashboard')
     st.markdown('''
         This dashboard presents a visual analysis of dietary habits, offering insights into the balance between healthy and junk food choices.
@@ -571,7 +571,7 @@ if selected_page == 'Dashboard':
     st.markdown("---")
     st.markdown("© 2023 MealMetrics - Unveiling Nutritional Insights")
 
-if selected_page == 'About Us':
+if selected_page == 'ABOUT':
     st.title('🌟 About Us')
 
     # Banner Image for About Page
@@ -622,7 +622,7 @@ if selected_page == 'About Us':
     st.markdown("© 2023 MealMetrics - Pioneering Nutritional Insights")
 
 # Contact Us page
-if selected_page == 'Contact Us':
+if selected_page == 'CONTACT':
     st.title('📞 Contact Us')
 
     # Use columns for a structured layout
