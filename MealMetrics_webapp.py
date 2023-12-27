@@ -55,7 +55,7 @@ selected_page = option_menu(None, ["HOMEPAGE", "PANEL", "ABOUT", 'CONTACT'],
                             })
 
 # Page layouts
-if selected_page == 'HOME':
+if selected_page == 'HOMEPAGE':
     st.title('Welcome to MealMetrics!')
 
     # Banner Image
@@ -108,7 +108,7 @@ if selected_page == 'HOME':
     st.markdown("---")
     st.markdown("© 2023 MealMetrics - Unveiling Dietary Patterns")
 
-if selected_page == 'STATS':
+if selected_page == 'PANEL':
     st.title('📊 Dashboard')
     st.markdown('''
         This dashboard presents a visual analysis of dietary habits, offering insights into the balance between healthy and junk food choices.
