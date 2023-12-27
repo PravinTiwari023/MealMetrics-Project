@@ -45,16 +45,14 @@ def on_change(key):
     selection = st.session_state[key]
 
 selected_page = option_menu(None, ["HOME", "STATS", "ABOUT", 'CONTACT'],
-                            icons=['house', 'list-task', "info-circle", 'envelope'],
+                            icons=['house', 'map', "info-circle", 'envelope'],
                             on_change=on_change, key='menu', orientation="horizontal",
                             styles={
-                                "container": {"padding": "4px", "background-color": "#f0f0f0", "border-radius": "10px"},
-                                "icon": {"color": "#606060", "font-size": "12px"},
-                                "nav-link": {"font-size": "12px", "text-align": "center", "margin": "0px", "color": "#505050", "font-weight": "normal"},  # Set font weight to normal
+                                "container": {"padding": "4px", "background-color": "#f0f0f0", "border-radius": "10px", "width": "100%"},  # Set the container width to 100%
+                                "icon": {"color": "#606060", "font-size": "18px"},  # Increase the font size for icons
+                                "nav-link": {"font-size": "18px", "text-align": "center", "margin": "0px", "color": "#505050", "font-weight": "normal"},  # Increase font size for text
                                 "nav-link-selected": {"background-color": "#B0A4E6", "color": "black", "font-weight": "normal"},  # Darker shade of light violet and normal font weight
                             })
-
-
 
 # Page layouts
 if selected_page == 'HOME':
