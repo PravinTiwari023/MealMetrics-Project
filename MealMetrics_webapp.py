@@ -35,6 +35,7 @@ data = pd.DataFrame(data_)
 # st.write(data)
 # Navigation bar code
 menu_data = [
+    {'icon': "fas fa-home", 'label': "Home"},  # Home Page
     {'icon': "fas fa-tachometer-alt", 'label': "Dashboard", 'ttip': "I'm the Dashboard tooltip!"},
     {'icon': "fas fa-info-circle", 'label': "About Us"},  # Changed to an info icon for About Us
     {'icon': "fas fa-envelope", 'label': "Contact Us"}  # Changed to an envelope icon for Contact Us
@@ -44,64 +45,61 @@ menu_data = [
 over_theme = {'txc_inactive': '#FFFFFF'}
 
 # Create the navigation bar
-menu_id = hc.nav_bar(menu_definition=menu_data, home_name='Home', override_theme=over_theme)
-
-# Display the ID of the selected menu item
-st.info(f"Selected menu item: {menu_id}")
+menu_id = hc.nav_bar(menu_definition=menu_data, override_theme=over_theme)
 
 # # Sidebar for navigation
 # st.sidebar.title('Navigation')
 # page = st.sidebar.radio('Go to', ['Homepage', 'Dashboard', 'About', 'Contact Us'])
 
 # Page layouts
-# if menu_id == 'Homepage':
-st.title('Welcome to MealMetrics!')
+if menu_id == 'Home':
+    st.title('Welcome to MealMetrics!')
 
-# Banner Image
-# st.image('homepage_banner.jpg', use_column_width=True)
+    # Banner Image
+    # st.image('homepage_banner.jpg', use_column_width=True)
 
-# Introduction and Description
-st.markdown("""
-## 🥗 MealMetrics: Your Dietary Insight Tool
-MealMetrics is a webapp designed to analyze and visualize dietary habits based on user-submitted data. 
-The data is collected from various sources and is used to provide insights into dietary patterns, preferences, and nutrition considerations.
+    # Introduction and Description
+    st.markdown("""
+    ## 🥗 MealMetrics: Your Dietary Insight Tool
+    MealMetrics is a webapp designed to analyze and visualize dietary habits based on user-submitted data. 
+    The data is collected from various sources and is used to provide insights into dietary patterns, preferences, and nutrition considerations.
+    
+    - **Data Collection:** Through online surveys focusing on dietary habits, meal frequency, nutritional considerations, and more.
+    - **Purpose:** To help users understand eating habits and make informed decisions about their diet and nutrition.
+    - **Data Description:** Metrics like meal frequency, dietary preferences, nutritional value, etc., from diverse individuals.
+    """)
 
-- **Data Collection:** Through online surveys focusing on dietary habits, meal frequency, nutritional considerations, and more.
-- **Purpose:** To help users understand eating habits and make informed decisions about their diet and nutrition.
-- **Data Description:** Metrics like meal frequency, dietary preferences, nutritional value, etc., from diverse individuals.
-""")
+    # Interactive Data Preview Section
+    st.subheader('🔍 Preview of Collected Data')
+    # Load and display a snippet of the data
+    # Assuming 'data' is your DataFrame
+    data_to_display = data.drop(data.columns[[0, 1]], axis=1)  # Dropping the first two columns
+    st.dataframe(data_to_display)  # Display the modified DataFrame
 
-# Interactive Data Preview Section
-st.subheader('🔍 Preview of Collected Data')
-# Load and display a snippet of the data
-# Assuming 'data' is your DataFrame
-data_to_display = data.drop(data.columns[[0, 1]], axis=1)  # Dropping the first two columns
-st.dataframe(data_to_display)  # Display the modified DataFrame
+    # Detailed Data Description
+    st.markdown("""
+    ### 📊 Detailed Data Description
+    
+    - **Gender:** The gender of the respondent.
+    - **Dietary Preferences:** Choices like vegetarian, vegan, keto, etc.
+    - **Meal Frequency:** Number of meals eaten in a day.
+    - **Nutritional Consideration:** Focus on nutritional info when choosing food.
+    - **Fruits and Vegetables Consumption:** Frequency of consumption.
+    - **Whole Grains Consumption:** Inclusion of whole grains in meals.
+    - **Snacking Habits:** Information about snacking between meals.
+    - **Eating Out Frequency:** How often eating out occurs weekly.
+    - **Food Label Reading Habits:** Regular reading of food labels for nutrition.
+    - **Steps to Improve Diet:** Actions taken to improve diet.
+    - **Health Consciousness:** Measure of diet-related health awareness.
+    - **Food Selection Priorities:** Factors prioritized in food selection (taste, cost, health benefits).
+    
+    This data helps create interactive visualizations for insights into dietary habits.
+    """)
 
-# Detailed Data Description
-st.markdown("""
-### 📊 Detailed Data Description
-
-- **Gender:** The gender of the respondent.
-- **Dietary Preferences:** Choices like vegetarian, vegan, keto, etc.
-- **Meal Frequency:** Number of meals eaten in a day.
-- **Nutritional Consideration:** Focus on nutritional info when choosing food.
-- **Fruits and Vegetables Consumption:** Frequency of consumption.
-- **Whole Grains Consumption:** Inclusion of whole grains in meals.
-- **Snacking Habits:** Information about snacking between meals.
-- **Eating Out Frequency:** How often eating out occurs weekly.
-- **Food Label Reading Habits:** Regular reading of food labels for nutrition.
-- **Steps to Improve Diet:** Actions taken to improve diet.
-- **Health Consciousness:** Measure of diet-related health awareness.
-- **Food Selection Priorities:** Factors prioritized in food selection (taste, cost, health benefits).
-
-This data helps create interactive visualizations for insights into dietary habits.
-""")
-
-# Visual Element: Interactive Charts or Graphs
-st.subheader('📈 Interactive Diet Insights')
-# Example: Display an interactive chart based on the data
-# st.plotly_chart(some_plotly_chart_based_on_data)
+    # Visual Element: Interactive Charts or Graphs
+    st.subheader('📈 Interactive Diet Insights')
+    # Example: Display an interactive chart based on the data
+    # st.plotly_chart(some_plotly_chart_based_on_data)
 
 # Footer
 st.markdown("---")
@@ -576,7 +574,7 @@ if menu_id == 'Dashboard':
     st.markdown("---")
     st.markdown("© 2023 MealMetrics - Unveiling Nutritional Insights")
 
-if menu_id == 'About':
+if menu_id == 'About Us':
     st.title('🌟 About Us')
 
     # Banner Image for About Page
