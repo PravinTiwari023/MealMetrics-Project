@@ -44,7 +44,7 @@ st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 def on_change(key):
     selection = st.session_state[key]
 
-selected_page = option_menu(None, ["HOME", "STATS", "ABOUT", 'CONTACT'],
+selected_page = option_menu(None, ["HOMEPAGE", "PANEL", "ABOUT", 'CONTACT'],
                             icons=['house', 'map', "info-circle", 'envelope'],
                             on_change=on_change, key='menu', orientation="horizontal",
                             styles={
