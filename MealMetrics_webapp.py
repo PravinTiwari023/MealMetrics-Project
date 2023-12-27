@@ -1,5 +1,5 @@
 import streamlit as st
-import hydralit_components as hc
+from streamlit_option_menu import option_menu
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -32,27 +32,22 @@ data_ = sheet.get_all_records()
 # Convert to DataFrame
 data = pd.DataFrame(data_)
 
-# st.write(data)
-# Navigation bar code
-menu_data = [
-    {'icon': "fas fa-home", 'label': "Home"},  # Home Page
-    {'icon': "fas fa-tachometer-alt", 'label': "Dashboard", 'ttip': "I'm the Dashboard tooltip!"},
-    {'icon': "fas fa-info-circle", 'label': "About Us"},  # Changed to an info icon for About Us
-    {'icon': "fas fa-envelope", 'label': "Contact Us"}  # Changed to an envelope icon for Contact Us
-]
+# Add on_change callback
+def on_change(key):
+    selection = st.session_state[key]
 
-# Define the theme overrides
-over_theme = {'txc_inactive': '#FFFFFF'}
-
-# Create the navigation bar
-menu_id = hc.nav_bar(menu_definition=menu_data, override_theme=over_theme)
-
-# # Sidebar for navigation
-# st.sidebar.title('Navigation')
-# page = st.sidebar.radio('Go to', ['Homepage', 'Dashboard', 'About', 'Contact Us'])
+selected_page = option_menu(None, ["Home", "Dashboard", "About Us", 'Contact Us'],
+                            icons=['house', 'list-task', "info-circle", 'envelope'],
+                            on_change=on_change, key='menu', orientation="horizontal",
+                            styles={
+                                "container": {"padding": "5px", "background-color": "#f0f0f0", "border-radius": "10px"},
+                                "icon": {"color": "#606060", "font-size": "20px"},
+                                "nav-link": {"font-size": "16px", "text-align": "left", "margin": "0px", "color": "#505050"},
+                                "nav-link-selected": {"background-color": "#E6E6FA", "color": "black"},  # Light violet color
+                            })
 
 # Page layouts
-if menu_id == 'Home':
+if selected_page == 'Home':
     st.title('Welcome to MealMetrics!')
 
     # Banner Image
@@ -63,7 +58,7 @@ if menu_id == 'Home':
     ## 🥗 MealMetrics: Your Dietary Insight Tool
     MealMetrics is a webapp designed to analyze and visualize dietary habits based on user-submitted data. 
     The data is collected from various sources and is used to provide insights into dietary patterns, preferences, and nutrition considerations.
-    
+
     - **Data Collection:** Through online surveys focusing on dietary habits, meal frequency, nutritional considerations, and more.
     - **Purpose:** To help users understand eating habits and make informed decisions about their diet and nutrition.
     - **Data Description:** Metrics like meal frequency, dietary preferences, nutritional value, etc., from diverse individuals.
@@ -79,7 +74,7 @@ if menu_id == 'Home':
     # Detailed Data Description
     st.markdown("""
     ### 📊 Detailed Data Description
-    
+
     - **Gender:** The gender of the respondent.
     - **Dietary Preferences:** Choices like vegetarian, vegan, keto, etc.
     - **Meal Frequency:** Number of meals eaten in a day.
@@ -92,7 +87,7 @@ if menu_id == 'Home':
     - **Steps to Improve Diet:** Actions taken to improve diet.
     - **Health Consciousness:** Measure of diet-related health awareness.
     - **Food Selection Priorities:** Factors prioritized in food selection (taste, cost, health benefits).
-    
+
     This data helps create interactive visualizations for insights into dietary habits.
     """)
 
@@ -101,11 +96,11 @@ if menu_id == 'Home':
     # Example: Display an interactive chart based on the data
     # st.plotly_chart(some_plotly_chart_based_on_data)
 
-# Footer
-st.markdown("---")
-st.markdown("© 2023 MealMetrics - Unveiling Dietary Patterns")
+    # Footer
+    st.markdown("---")
+    st.markdown("© 2023 MealMetrics - Unveiling Dietary Patterns")
 
-if menu_id == 'Dashboard':
+if selected_page == 'Dashboard':
     st.title('📊 Dashboard')
     st.markdown('''
         This dashboard presents a visual analysis of dietary habits, offering insights into the balance between healthy and junk food choices.
@@ -568,13 +563,13 @@ if menu_id == 'Dashboard':
     }
 
     # Render the tree chart in Streamlit
-    st_echarts(option, height="500px")
+    st_echarts(option, height="700px")
 
     # Footer
     st.markdown("---")
     st.markdown("© 2023 MealMetrics - Unveiling Nutritional Insights")
 
-if menu_id == 'About Us':
+if selected_page == 'About Us':
     st.title('🌟 About Us')
 
     # Banner Image for About Page
@@ -625,7 +620,7 @@ if menu_id == 'About Us':
     st.markdown("© 2023 MealMetrics - Pioneering Nutritional Insights")
 
 # Contact Us page
-if menu_id == 'Contact Us':
+if selected_page == 'Contact Us':
     st.title('📞 Contact Us')
 
     # Use columns for a structured layout
