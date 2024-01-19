@@ -32,14 +32,6 @@ data_ = sheet.get_all_records()
 # Convert to DataFrame
 data = pd.DataFrame(data_)
 
-hide_streamlit_style = """
-            <style>
-            #MainMenu {visibility: hidden;}
-            footer {visibility: hidden;}
-            </style>
-            """
-st.markdown(hide_streamlit_style, unsafe_allow_html=True)
-
 # Add on_change callback
 def on_change(key):
     selection = st.session_state[key]
